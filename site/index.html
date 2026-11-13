@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pit Wall · A validated AI analyst for NASCAR data</title>
+<meta name="description" content="An MCP server that lets AI assistants answer NASCAR Cup Series questions from SQL, with business definitions built into every tool and every answer checked against trusted SQL. By Austin Gentile.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2312355b'/%3E%3Cpath d='M16 46V18h18a10 10 0 0 1 0 20H24v8z' fill='%23f5c518'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script defer src="app.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><span class="dot"></span>Pit Wall</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#how">How it works</a><a href="#validation">Validation</a><a href="#traps">Where AI goes wrong</a>
+      <a href="#model">Forecast</a><a href="#fans">Fan lens</a><a href="#use">Use it</a><a href="#method">Method</a>
+    </nav>
+    <button class="theme" id="theme" type="button" aria-label="Switch light or dark theme">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+    </button>
+  </div>
+</header>
+<main>
+<div class="hero wrap">
+  <div class="kicker">MCP · SQL · AI validation · NASCAR Cup Series 2022–2026</div>
+  <h1>Pit <em>Wall</em></h1>
+  <p class="dek">Count every race in the results table, as a naive query would, and Chase Elliott and Joey Logano tie for the most Cup wins of 2022. The right answer is Elliott alone: one of Logano's "wins" was the Clash, an exhibition. Pit Wall is an MCP server that lets AI assistants answer NASCAR questions from SQL with the definitions built into every tool, and every answer shows the query that produced it.</p>
+  <div class="byline">By <strong>Austin Gentile</strong> · <span id="asof"></span> · Data: NASCAR's public results feeds, every Cup Series race 2022–2026</div>
+  <div class="kpis">
+    <div class="kpi"><div class="v num" id="k-pass"></div><div class="l">business questions answered correctly through the MCP protocol, checked against trusted SQL</div></div>
+    <div class="kpi"><div class="v num" id="k-cite"></div><div class="l">answers that cite their SQL, and every cited query reproduces its answer exactly when rerun</div></div>
+    <div class="kpi"><div class="v num" id="k-traps"></div><div class="l">"trap" questions passed: exhibition wins, ambiguous names, two-race tracks, unsafe SQL</div></div>
+    <div class="kpi"><div class="v num" id="k-auc"></div><div class="l">AUC of the top-10 forecast on 2026 races it never saw (starting grid alone: <span id="k-auc-base"></span>)</div></div>
+  </div>
+</div>
+
+<section class="block" id="how">
+  <div class="wrap">
+    <div class="kicker">How it works</div>
+    <h2>From race results to trusted answers</h2>
+    <div class="flow">
+      <div class="step"><b>Data</b>Every Cup Series race 2022–2026 from NASCAR's public results feeds: finishes, starts, laps led, status, team, make, plus race-level lead changes and cautions.</div>
+      <div class="step"><b>SQL + definitions</b>DuckDB tables and views. A win, a top 10, a DNF and an average finish are each defined once, in SQL, for points races only.</div>
+      <div class="step"><b>MCP server</b>Eight tools an AI assistant can call, each with a description that carries the definitions and asks instead of guessing when a name is ambiguous.</div>
+      <div class="step"><b>Validation</b>Every tool answer, called through the real MCP protocol, is checked against a trusted query written directly on the raw tables.</div>
+    </div>
+    <div class="grid-2" style="margin-bottom:22px">
+      <div class="prose">
+        <h3 style="margin-top:0">Every answer shows its work</h3>
+        <p>Each tool returns the answer, the definitions it applied (<code>basis</code>) and the exact query that produced it (<code>sql</code>). A person checking an AI assistant's claim doesn't have to trust the assistant: paste one query into DuckDB and see the same numbers. The validation suite reruns every cited query and confirms it reproduces the answer.</p>
+        <p class="small muted">The data: <span id="k-races"></span> points races and <span id="k-rows"></span> driver results, 2022–2026.</p>
+      </div>
+      <div class="card">
+        <div class="chart-sub"><code>driver_season_stats("William Byron", 2025)</code> returns:</div>
+        <pre class="code" id="ex-byron"></pre>
+      </div>
+    </div>
+    <div class="card">
+      <div class="chart-title">The tools an assistant sees</div>
+      <div class="tablewrap"><table class="data" id="t-tools"></table></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="validation">
+  <div class="wrap">
+    <div class="kicker">Validation</div>
+    <h2>Every answer, checked against trusted SQL</h2>
+    <p class="prose">Each question below is asked through the MCP protocol exactly as an assistant would ask it. The answer is compared with a trusted query written separately against the raw tables, not the views the tools share, so a mistake in the shared business logic shows up as a failure. The suite runs in one command and must pass before anything ships.</p>
+    <div class="controls"><div class="seg" id="v-filter"></div></div>
+    <div class="card"><div class="tablewrap"><table class="data" id="t-evals"></table></div></div>
+  </div>
+</section>
+
+<section class="block" id="traps">
+  <div class="wrap">
+    <div class="kicker">Where AI answers go wrong</div>
+    <h2>Definitions are where the errors hide</h2>
+    <p class="prose">A language model writing its own SQL will usually produce something that runs. The danger is that it runs on the wrong definition. These are the traps in this data, measured. Each one is handled in the tool layer and covered by a test.</p>
+    <div class="grid-2" id="trap-cards"></div>
+  </div>
+</section>
+
+<section class="block" id="model">
+  <div class="wrap">
+    <div class="kicker">Forecast</div>
+    <h2>Who finishes in the top 10?</h2>
+    <div class="grid-2">
+      <div class="prose">
+        <p>The <code>top10_probability</code> tool is a logistic regression on facts known before the green flag: starting spot, the driver's last 10 races, his record on that type of track, his team's recent form and the field size. It was trained on 2022–2025 and tested on all 36 races of 2026, which it never saw.</p>
+        <p id="model-text"></p>
+        <div class="tablewrap"><table class="data" id="t-metrics"></table></div>
+      </div>
+      <div class="card">
+        <div class="chart-title">Calibration on 2026</div>
+        <div class="chart-sub">When the model says 30%, about 30% should finish top 10.</div>
+        <div class="chart" id="ch-calib"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="fans">
+  <div class="wrap">
+    <div class="kicker">Fan lens</div>
+    <h2>Which tracks deliver the closest racing?</h2>
+    <div class="grid-2">
+      <div class="card">
+        <div class="chart-title">Lead changes per race and photo finishes, by track type</div>
+        <div class="chart-sub">Points races 2022–2026. Photo finish: margin of victory under 0.1 seconds.</div>
+        <div class="chart" id="ch-fans"></div>
+      </div>
+      <div class="prose" id="fans-text"></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="use">
+  <div class="wrap">
+    <div class="kicker">Use it</div>
+    <h2>Connect it to an assistant</h2>
+    <div class="grid-2">
+      <div class="prose">
+        <p>Clone the repository, build the database (about two minutes), and add the server to any MCP client, for example Claude Desktop's configuration:</p>
+<pre class="code">git clone https://github.com/AustinsAnalytics/pit-wall
+cd pit-wall && pip install -r requirements.txt
+python pipeline/fetch.py && python pipeline/build.py
+python -m pitwall.model && python evals/run_evals.py</pre>
+<pre class="code">{"mcpServers": {"pit-wall": {
+  "command": "python", "args": ["-m", "pitwall.server"],
+  "cwd": "/path/to/pit-wall"}}}</pre>
+      </div>
+      <div class="card">
+        <div class="chart-title">What an ambiguous question gets back</div>
+        <div class="chart-sub"><code>driver_season_stats("Dillon", 2024)</code>: it asks rather than guesses.</div>
+        <pre class="code" id="ex-dillon"></pre>
+        <div class="chart-title" style="margin-top:12px">A forecast</div>
+        <div class="chart-sub"><code>top10_probability("Kyle Larson", "Martinsville", 5)</code></div>
+        <pre class="code" id="ex-top10"></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="method">
+  <div class="wrap">
+    <div class="kicker">Method, definitions and limits</div>
+    <h2>Definitions every answer follows</h2>
+    <div class="card"><div class="tablewrap"><table class="data" id="t-defs"></table></div></div>
+    <h3>Limits</h3>
+    <div class="prose">
+      <p>The validation suite tests the tools, through the protocol, against trusted SQL. It does not grade a language model's free-form wording; the same harness can grade any assistant's answers by swapping in its tool calls. Track types are a documented judgment call. The forecast's edge over the starting grid is real but modest (it is a 36-race test), and it knows nothing about pit strategy, wrecks or weather. Results come from NASCAR's public feeds; 18 points-race finishes have no status recorded and are not counted as DNFs.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p><b style="color:var(--ink)">Austin Gentile</b> · Mathematics and Data Science, Centre College · <a href="https://www.linkedin.com/in/austin-gentile-0560a3342">LinkedIn</a> · <a href="https://github.com/AustinsAnalytics/pit-wall">Code</a> · <a href="https://austinsanalytics.github.io/tap-or-hold/">Also: Tap or Hold (baseball)</a></p>
+    <p>Built with Claude Code (Anthropic) as an AI pair programmer, which is also why it validates everything: every number on this page is produced by the code in the repository and checked by its test suite.</p>
+    <p>Independent project. Not affiliated with, endorsed by or produced for NASCAR. Data: NASCAR's public results feeds.</p>
+  </div>
+</footer>
+</body>
+</html>
