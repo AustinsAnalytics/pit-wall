@@ -1,0 +1,7 @@
+data/raw/
+data/*.duckdb
+data/*.duckdb.wal
+__pycache__/
+.DS_Store
+.venv/
+evals/run.log
