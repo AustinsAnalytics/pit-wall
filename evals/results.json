@@ -1,0 +1,430 @@
+{
+ "summary": {
+  "questions": 25,
+  "passed": 25,
+  "traps": 6,
+  "traps_passed": 6,
+  "tools": [
+   "describe_data",
+   "driver_season_stats",
+   "excitement_by_track_type",
+   "race_result",
+   "run_sql",
+   "season_leaders",
+   "top10_probability",
+   "track_history"
+  ],
+  "median_ms": 3.2,
+  "answers_citing_sql": 21,
+  "cited_sql_reproduced": 21
+ },
+ "results": [
+  {
+   "id": 1,
+   "question": "Joey Logano's points-race wins in 2024",
+   "tool": "driver_season_stats",
+   "args": {
+    "driver": "Joey Logano",
+    "season": 2024
+   },
+   "answer": 4,
+   "trusted": 4,
+   "pass": true,
+   "ms": 47.9,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 2,
+   "question": "Kyle Larson's top-10 finishes in 2023",
+   "tool": "driver_season_stats",
+   "args": {
+    "driver": "Larson",
+    "season": 2023
+   },
+   "answer": 18,
+   "trusted": 18,
+   "pass": true,
+   "ms": 4.1,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 3,
+   "question": "Denny Hamlin's laps led in 2022",
+   "tool": "driver_season_stats",
+   "args": {
+    "driver": "Denny Hamlin",
+    "season": 2022
+   },
+   "answer": 624,
+   "trusted": 624,
+   "pass": true,
+   "ms": 3.5,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 4,
+   "question": "Chase Elliott's average finish in 2025",
+   "tool": "driver_season_stats",
+   "args": {
+    "driver": "Chase Elliott",
+    "season": 2025
+   },
+   "answer": 12.61,
+   "trusted": 12.61,
+   "pass": true,
+   "ms": 3.3,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 5,
+   "question": "Ross Chastain's DNFs in 2024",
+   "tool": "driver_season_stats",
+   "args": {
+    "driver": "Chastain",
+    "season": 2024
+   },
+   "answer": 4,
+   "trusted": 4,
+   "pass": true,
+   "ms": 3.3,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 6,
+   "question": "William Byron's poles in 2025",
+   "tool": "driver_season_stats",
+   "args": {
+    "driver": "William Byron",
+    "season": 2025
+   },
+   "answer": 3,
+   "trusted": 3,
+   "pass": true,
+   "ms": 3.1,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 7,
+   "question": "Most wins in 2026",
+   "tool": "season_leaders",
+   "args": {
+    "season": 2026,
+    "stat": "wins",
+    "top_n": 1
+   },
+   "answer": "Tyler Reddick",
+   "trusted": "Tyler Reddick",
+   "pass": true,
+   "ms": 4.4,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 8,
+   "question": "Most laps led in 2023",
+   "tool": "season_leaders",
+   "args": {
+    "season": 2023,
+    "stat": "laps_led",
+    "top_n": 1
+   },
+   "answer": "Kyle Larson",
+   "trusted": "Kyle Larson",
+   "pass": true,
+   "ms": 3.1,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 9,
+   "question": "Best average finish in 2022 (10+ starts)",
+   "tool": "season_leaders",
+   "args": {
+    "season": 2022,
+    "stat": "avg_finish",
+    "top_n": 1
+   },
+   "answer": "Chase Elliott",
+   "trusted": "Chase Elliott",
+   "pass": true,
+   "ms": 3.4,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 10,
+   "question": "Most top-5s in 2025",
+   "tool": "season_leaders",
+   "args": {
+    "season": 2025,
+    "stat": "top5s",
+    "top_n": 1
+   },
+   "answer": 15,
+   "trusted": 15,
+   "pass": true,
+   "ms": 2.8,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 11,
+   "question": "Daytona 500 winners, 2022-2026",
+   "tool": "track_history",
+   "args": {
+    "track": "Daytona",
+    "since_season": 2022
+   },
+   "answer": [
+    "Austin Cindric",
+    "Ricky Stenhouse Jr",
+    "William Byron",
+    "William Byron",
+    "Tyler Reddick"
+   ],
+   "trusted": [
+    "Austin Cindric",
+    "Ricky Stenhouse Jr",
+    "William Byron",
+    "William Byron",
+    "Tyler Reddick"
+   ],
+   "pass": true,
+   "ms": 5.0,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 12,
+   "question": "Different winners at Martinsville since 2022",
+   "tool": "track_history",
+   "args": {
+    "track": "Martinsville",
+    "since_season": 2022
+   },
+   "answer": 6,
+   "trusted": 6,
+   "pass": true,
+   "ms": 3.2,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 13,
+   "question": "Average lead changes at Talladega since 2022",
+   "tool": "track_history",
+   "args": {
+    "track": "Talladega",
+    "since_season": 2022
+   },
+   "answer": 60.3,
+   "trusted": 60.3,
+   "pass": true,
+   "ms": 3.1,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 14,
+   "question": "Winner of the 2025 Coca-Cola 600",
+   "tool": "race_result",
+   "args": {
+    "season": 2025,
+    "race": "Coca-Cola 600",
+    "top_n": 1
+   },
+   "answer": "Ross Chastain",
+   "trusted": "Ross Chastain",
+   "pass": true,
+   "ms": 3.6,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 15,
+   "question": "Winner of the 2026 race at Homestead-Miami",
+   "tool": "race_result",
+   "args": {
+    "season": 2026,
+    "race": "Homestead",
+    "top_n": 1
+   },
+   "answer": "Ryan Blaney",
+   "trusted": "Ryan Blaney",
+   "pass": true,
+   "ms": 3.5,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 16,
+   "question": "Track type with the most lead changes per race",
+   "tool": "excitement_by_track_type",
+   "args": {},
+   "answer": "superspeedway",
+   "trusted": "superspeedway",
+   "pass": true,
+   "ms": 3.0,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 17,
+   "question": "Photo finishes (< 0.1 s) at superspeedways, %",
+   "tool": "excitement_by_track_type",
+   "args": {},
+   "answer": 54.5,
+   "trusted": 54.5,
+   "pass": true,
+   "ms": 2.4,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 18,
+   "question": "Manufacturer with the most 2026 wins (SQL tool)",
+   "tool": "run_sql",
+   "args": {
+    "sql": "WITH w AS (SELECT make, count(*) AS wins FROM points_results WHERE season = 2026 AND win GROUP BY make) SELECT make FROM w ORDER BY wins DESC LIMIT 1"
+   },
+   "answer": "Toyota",
+   "trusted": "Toyota",
+   "pass": true,
+   "ms": 2.7,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 19,
+   "question": "Team with the most wins, 2022-2026 (SQL tool)",
+   "tool": "run_sql",
+   "args": {
+    "sql": "SELECT team, sum(win::INT) AS wins FROM points_results GROUP BY team ORDER BY wins DESC LIMIT 1"
+   },
+   "answer": "Hendrick Motorsports",
+   "trusted": "Hendrick Motorsports",
+   "pass": true,
+   "ms": 2.5,
+   "trap": false,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 20,
+   "question": "TRAP: 'Dillon' is two drivers - must ask, not guess",
+   "tool": "driver_season_stats",
+   "args": {
+    "driver": "Dillon",
+    "season": 2024
+   },
+   "answer": true,
+   "trusted": true,
+   "pass": true,
+   "ms": 1.7,
+   "trap": true,
+   "cites_sql": false,
+   "cited_sql_reproduces": null
+  },
+  {
+   "id": 21,
+   "question": "TRAP: exhibition wins don't count (Ryan Preece won the 2026 Clash)",
+   "tool": "driver_season_stats",
+   "args": {
+    "driver": "Ryan Preece",
+    "season": 2026
+   },
+   "answer": 1,
+   "trusted": 1,
+   "pass": true,
+   "ms": 3.2,
+   "trap": true,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 22,
+   "question": "TRAP: two Talladega races in 2025 - must ask which",
+   "tool": "race_result",
+   "args": {
+    "season": 2025,
+    "race": "Talladega"
+   },
+   "answer": true,
+   "trusted": true,
+   "pass": true,
+   "ms": 2.7,
+   "trap": true,
+   "cites_sql": false,
+   "cited_sql_reproduces": null
+  },
+  {
+   "id": 23,
+   "question": "TRAP: 'Charlotte' means the oval, not the Roval",
+   "tool": "track_history",
+   "args": {
+    "track": "Charlotte"
+   },
+   "answer": "Charlotte Motor Speedway",
+   "trusted": "Charlotte Motor Speedway",
+   "pass": true,
+   "ms": 3.3,
+   "trap": true,
+   "cites_sql": true,
+   "cited_sql_reproduces": true
+  },
+  {
+   "id": 24,
+   "question": "TRAP: the SQL tool refuses writes",
+   "tool": "run_sql",
+   "args": {
+    "sql": "DROP TABLE results"
+   },
+   "answer": true,
+   "trusted": true,
+   "pass": true,
+   "ms": 1.0,
+   "trap": true,
+   "cites_sql": false,
+   "cited_sql_reproduces": null
+  },
+  {
+   "id": 25,
+   "question": "TRAP: the SQL tool refuses a second statement",
+   "tool": "run_sql",
+   "args": {
+    "sql": "SELECT 1; DELETE FROM results"
+   },
+   "answer": true,
+   "trusted": true,
+   "pass": true,
+   "ms": 0.9,
+   "trap": true,
+   "cites_sql": false,
+   "cited_sql_reproduces": null
+  }
+ ]
+}

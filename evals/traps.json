@@ -1,0 +1,68 @@
+{
+ "exhibition_wins_added": 24,
+ "driver_seasons_changed": 24,
+ "wins_leader_by_season": [
+  {
+   "season": 2022,
+   "naive": [
+    "Chase Elliott",
+    "Joey Logano"
+   ],
+   "correct": [
+    "Chase Elliott"
+   ]
+  },
+  {
+   "season": 2023,
+   "naive": [
+    "William Byron"
+   ],
+   "correct": [
+    "William Byron"
+   ]
+  },
+  {
+   "season": 2024,
+   "naive": [
+    "Kyle Larson"
+   ],
+   "correct": [
+    "Kyle Larson"
+   ]
+  },
+  {
+   "season": 2025,
+   "naive": [
+    "Denny Hamlin"
+   ],
+   "correct": [
+    "Denny Hamlin"
+   ]
+  },
+  {
+   "season": 2026,
+   "naive": [
+    "Tyler Reddick"
+   ],
+   "correct": [
+    "Tyler Reddick"
+   ]
+  }
+ ],
+ "seasons_where_naive_leader_differs": 1,
+ "blank_status_rows_points_races": 18,
+ "shared_last_names": [
+  "Brown",
+  "Burton",
+  "Busch",
+  "Dillon",
+  "Hill",
+  "Jr",
+  "Smith"
+ ],
+ "two_race_tracks_2026": 10,
+ "preece_2026_naive_vs_correct": [
+  2,
+  1
+ ]
+}
