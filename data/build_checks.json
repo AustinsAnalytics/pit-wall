@@ -1,0 +1,14 @@
+{
+ "races": 204,
+ "points_races": 180,
+ "results_rows": 7340,
+ "one_winner_per_race": true,
+ "duplicate_driver_rows": 0,
+ "points_races_per_season": {
+  "2022": 36,
+  "2023": 36,
+  "2024": 36,
+  "2025": 36,
+  "2026": 36
+ }
+}

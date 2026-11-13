@@ -1,0 +1,1568 @@
+{
+ "train": {
+  "seasons": "2022-2025",
+  "rows": 5379,
+  "races": 144
+ },
+ "test": {
+  "season": 2026,
+  "rows": 1363,
+  "races": 36
+ },
+ "metrics": {
+  "model": {
+   "log_loss": 0.4839630452161967,
+   "brier": 0.1599933666250773,
+   "auc": 0.7807438709571335,
+   "top10_picks_hit_rate": 0.5305555555555554
+  },
+  "starting_spot_only": {
+   "log_loss": 0.5163848862338708,
+   "brier": 0.1704525488603899,
+   "auc": 0.7457618757913083,
+   "top10_picks_hit_rate": 0.5027777777777778
+  },
+  "constant_rate": {
+   "log_loss": 0.5817916324675997,
+   "brier": 0.1964214662540513,
+   "auc": 0.5
+  }
+ },
+ "calibration": [
+  {
+   "bin": 0,
+   "pred": 0.07151078885966353,
+   "actual": 0.027149321266968326,
+   "n": 221
+  },
+  {
+   "bin": 1,
+   "pred": 0.1430000746153461,
+   "actual": 0.11951219512195121,
+   "n": 410
+  },
+  {
+   "bin": 2,
+   "pred": 0.2463428683253749,
+   "actual": 0.31048387096774194,
+   "n": 248
+  },
+  {
+   "bin": 3,
+   "pred": 0.34369829094749776,
+   "actual": 0.3645833333333333,
+   "n": 192
+  },
+  {
+   "bin": 4,
+   "pred": 0.44494615072409016,
+   "actual": 0.48360655737704916,
+   "n": 122
+  },
+  {
+   "bin": 5,
+   "pred": 0.5440011378928244,
+   "actual": 0.5679012345679012,
+   "n": 81
+  },
+  {
+   "bin": 6,
+   "pred": 0.651759407435791,
+   "actual": 0.6,
+   "n": 45
+  },
+  {
+   "bin": 7,
+   "pred": 0.7441328479477882,
+   "actual": 0.7575757575757576,
+   "n": 33
+  },
+  {
+   "bin": 8,
+   "pred": 0.8369881128542449,
+   "actual": 0.6363636363636364,
+   "n": 11
+  }
+ ],
+ "coefficients": {
+  "log_start": -0.45812959235702033,
+  "form_avg_finish": 0.013871808501587401,
+  "form_top10_rate": 0.14194034262669142,
+  "type_avg_finish": -0.3726380134378971,
+  "team_avg_finish": -0.2728995610114227,
+  "field_size": 0.025270372273382385,
+  "type_intermediate": -0.047939312685455884,
+  "type_short_track": -0.08160831621671959,
+  "type_one_mile_flat": -0.0545958946125327,
+  "type_large_flat": -0.04353677952960948,
+  "type_road_course": -0.07466405278126624
+ },
+ "intercept": -1.12863188572826,
+ "mu": {
+  "log_start": 2.68670503369544,
+  "form_avg_finish": 19.011108529053313,
+  "form_top10_rate": 0.27226542373781637,
+  "type_avg_finish": 18.83151431050204,
+  "team_avg_finish": 19.051222296978942,
+  "field_size": 37.42201152630601
+ },
+ "sd": {
+  "log_start": 0.8647758264070363,
+  "form_avg_finish": 5.5293935945652795,
+  "form_top10_rate": 0.2146529200065489,
+  "type_avg_finish": 6.251737051356458,
+  "team_avg_finish": 4.690880192646506,
+  "field_size": 1.6430224710357
+ },
+ "form_as_of": "2026-11-08 00:00:00",
+ "drivers": {
+  "34": {
+   "driver": "Justin Allgaier",
+   "team": "Hendrick Motorsports",
+   "form_avg_finish": 24.625,
+   "form_top10_rate": 0.125,
+   "by_type": {
+    "superspeedway": 25.666666666666668,
+    "intermediate": 20.666666666666668,
+    "short_track": 29.0,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "40": {
+   "driver": "Aric Almirola",
+   "team": "Stewart-Haas Racing",
+   "form_avg_finish": 14.3,
+   "form_top10_rate": 0.2,
+   "by_type": {
+    "superspeedway": 18.25,
+    "intermediate": 17.25,
+    "short_track": 15.125,
+    "one_mile_flat": 22.375,
+    "large_flat": 12.5,
+    "road_course": 25.5
+   }
+  },
+  "243": {
+   "driver": "Greg Biffle",
+   "team": "NY Racing Team",
+   "form_avg_finish": 32.4,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 30.333333333333332,
+    "intermediate": 34.0,
+    "short_track": 37.0,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "453": {
+   "driver": "Kurt Busch",
+   "team": "23XI Racing",
+   "form_avg_finish": 16.9,
+   "form_top10_rate": 0.4,
+   "by_type": {
+    "superspeedway": 15.0,
+    "intermediate": 13.833333333333334,
+    "short_track": 24.333333333333332,
+    "one_mile_flat": 12.25,
+    "large_flat": 18.5,
+    "road_course": 24.333333333333332
+   }
+  },
+  "454": {
+   "driver": "Kyle Busch",
+   "team": "Richard Childress Racing",
+   "form_avg_finish": 20.0,
+   "form_top10_rate": 0.2,
+   "by_type": {
+    "superspeedway": 20.75,
+    "intermediate": 18.375,
+    "short_track": 18.125,
+    "one_mile_flat": 18.625,
+    "large_flat": 26.5,
+    "road_course": 16.625
+   }
+  },
+  "694": {
+   "driver": "Matt Crafton",
+   "team": "Rick Ware Racing",
+   "form_avg_finish": 34.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 34.0,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "1361": {
+   "driver": "Denny Hamlin",
+   "team": "Joe Gibbs Racing",
+   "form_avg_finish": 10.7,
+   "form_top10_rate": 0.7,
+   "by_type": {
+    "superspeedway": 17.375,
+    "intermediate": 6.625,
+    "short_track": 8.875,
+    "one_mile_flat": 8.625,
+    "large_flat": 10.125,
+    "road_course": 17.25
+   }
+  },
+  "1416": {
+   "driver": "Kevin Harvick",
+   "team": "Stewart-Haas Racing",
+   "form_avg_finish": 17.2,
+   "form_top10_rate": 0.2,
+   "by_type": {
+    "superspeedway": 24.0,
+    "intermediate": 13.25,
+    "short_track": 14.375,
+    "one_mile_flat": 11.0,
+    "large_flat": 15.5,
+    "road_course": 16.25
+   }
+  },
+  "1717": {
+   "driver": "Jimmie Johnson",
+   "team": "Legacy Motor Club",
+   "form_avg_finish": 29.0,
+   "form_top10_rate": 0.1,
+   "by_type": {
+    "superspeedway": 22.75,
+    "intermediate": 33.857142857142854,
+    "short_track": 18.5,
+    "one_mile_flat": 27.0,
+    "large_flat": 33.0,
+    "road_course": 33.0
+   }
+  },
+  "1816": {
+   "driver": "Brad Keselowski",
+   "team": "RFK Racing",
+   "form_avg_finish": 21.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.125,
+    "intermediate": 25.625,
+    "short_track": 18.625,
+    "one_mile_flat": 13.25,
+    "large_flat": 14.5,
+    "road_course": 26.625
+   }
+  },
+  "2215": {
+   "driver": "Casey Mears",
+   "team": "Beard Motorsports",
+   "form_avg_finish": 30.4,
+   "form_top10_rate": 0.1,
+   "by_type": {
+    "superspeedway": 26.0,
+    "intermediate": 37.0,
+    "short_track": 34.0,
+    "one_mile_flat": 36.0,
+    "large_flat": 35.5,
+    "road_course": 18.5
+   }
+  },
+  "2394": {
+   "driver": "Ryan Newman",
+   "team": "Rick Ware Racing",
+   "form_avg_finish": 29.875,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 27.0,
+    "short_track": 31.333333333333332,
+    "one_mile_flat": 32.0,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "2674": {
+   "driver": "David Ragan",
+   "team": "RFK Racing",
+   "form_avg_finish": 15.8,
+   "form_top10_rate": 0.4,
+   "by_type": {
+    "superspeedway": 15.8,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "2883": {
+   "driver": "Boris Said",
+   "team": "Motorsports Business Management",
+   "form_avg_finish": 26.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 26.0
+   }
+  },
+  "3170": {
+   "driver": "David Starr",
+   "team": "Garage 66",
+   "form_avg_finish": 33.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 29.0,
+    "intermediate": 18.5,
+    "short_track": 37.0,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "3368": {
+   "driver": "Martin Truex Jr",
+   "team": "TRICON Garage",
+   "form_avg_finish": 18.7,
+   "form_top10_rate": 0.2,
+   "by_type": {
+    "superspeedway": 20.5,
+    "intermediate": 19.125,
+    "short_track": 17.0,
+    "one_mile_flat": 10.25,
+    "large_flat": 11.25,
+    "road_course": 18.0
+   }
+  },
+  "3669": {
+   "driver": "JJ Yeley",
+   "team": "NY Racing Team",
+   "form_avg_finish": 29.1,
+   "form_top10_rate": 0.1,
+   "by_type": {
+    "superspeedway": 18.75,
+    "intermediate": 32.875,
+    "short_track": 30.125,
+    "one_mile_flat": 29.857142857142858,
+    "large_flat": 29.666666666666668,
+    "road_course": 35.0
+   }
+  },
+  "3773": {
+   "driver": "Juan Pablo Montoya",
+   "team": "23XI Racing",
+   "form_avg_finish": 32.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 32.0
+   }
+  },
+  "3774": {
+   "driver": "AJ Allmendinger",
+   "team": "Kaulig Racing",
+   "form_avg_finish": 22.7,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 26.0,
+    "intermediate": 22.375,
+    "short_track": 24.375,
+    "one_mile_flat": 24.875,
+    "large_flat": 23.714285714285715,
+    "road_course": 10.125
+   }
+  },
+  "3808": {
+   "driver": "Landon Cassill",
+   "team": "Spire Motorsports",
+   "form_avg_finish": 23.7,
+   "form_top10_rate": 0.1,
+   "by_type": {
+    "superspeedway": 14.6,
+    "intermediate": 25.666666666666668,
+    "short_track": 29.0,
+    "one_mile_flat": 33.0,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "3816": {
+   "driver": "Andy Lally",
+   "team": "Rick Ware Racing",
+   "form_avg_finish": 31.666666666666668,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 31.666666666666668
+   }
+  },
+  "3823": {
+   "driver": "Jacques Villeneuve",
+   "team": "Team Hezeberg",
+   "form_avg_finish": 22.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 22.0,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "3832": {
+   "driver": "Michael McDowell",
+   "team": "Spire Motorsports",
+   "form_avg_finish": 19.7,
+   "form_top10_rate": 0.2,
+   "by_type": {
+    "superspeedway": 16.5,
+    "intermediate": 20.5,
+    "short_track": 22.5,
+    "one_mile_flat": 15.5,
+    "large_flat": 20.625,
+    "road_course": 10.75
+   }
+  },
+  "3859": {
+   "driver": "Joey Logano",
+   "team": "Team Penske",
+   "form_avg_finish": 12.7,
+   "form_top10_rate": 0.6,
+   "by_type": {
+    "superspeedway": 20.5,
+    "intermediate": 12.25,
+    "short_track": 6.625,
+    "one_mile_flat": 10.125,
+    "large_flat": 22.375,
+    "road_course": 18.625
+   }
+  },
+  "3873": {
+   "driver": "Austin Dillon",
+   "team": "Richard Childress Racing",
+   "form_avg_finish": 19.9,
+   "form_top10_rate": 0.2,
+   "by_type": {
+    "superspeedway": 20.125,
+    "intermediate": 24.875,
+    "short_track": 16.875,
+    "one_mile_flat": 19.625,
+    "large_flat": 24.5,
+    "road_course": 22.375
+   }
+  },
+  "3888": {
+   "driver": "Ricky Stenhouse Jr",
+   "team": "HYAK Motorsports",
+   "form_avg_finish": 27.3,
+   "form_top10_rate": 0.1,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 26.625,
+    "short_track": 27.125,
+    "one_mile_flat": 23.875,
+    "large_flat": 21.125,
+    "road_course": 27.375
+   }
+  },
+  "3914": {
+   "driver": "Parker Kligerman",
+   "team": "Rick Ware Racing",
+   "form_avg_finish": 31.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 31.0,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "3918": {
+   "driver": "Burt Myers",
+   "team": "Team AmeriVet",
+   "form_avg_finish": 36.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 36.0,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "3952": {
+   "driver": "Ryan Truex",
+   "team": "Joe Gibbs Racing",
+   "form_avg_finish": 23.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 23.0
+   }
+  },
+  "3973": {
+   "driver": "BJ McLeod",
+   "team": "NY Racing Team",
+   "form_avg_finish": 27.8,
+   "form_top10_rate": 0.1,
+   "by_type": {
+    "superspeedway": 30.625,
+    "intermediate": 31.5,
+    "short_track": 32.0,
+    "one_mile_flat": 31.625,
+    "large_flat": 33.666666666666664,
+    "road_course": 18.5
+   }
+  },
+  "3978": {
+   "driver": "Grant Enfinger",
+   "team": "Legacy Motor Club",
+   "form_avg_finish": 26.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 26.0
+   }
+  },
+  "3984": {
+   "driver": "Timmy Hill",
+   "team": "Garage 66",
+   "form_avg_finish": 29.833333333333332,
+   "form_top10_rate": 0.16666666666666666,
+   "by_type": {
+    "superspeedway": 0.0,
+    "intermediate": 35.75,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 36.0
+   }
+  },
+  "3989": {
+   "driver": "Chris Buescher",
+   "team": "RFK Racing",
+   "form_avg_finish": 20.8,
+   "form_top10_rate": 0.1,
+   "by_type": {
+    "superspeedway": 17.875,
+    "intermediate": 18.375,
+    "short_track": 19.0,
+    "one_mile_flat": 16.125,
+    "large_flat": 14.5,
+    "road_course": 12.75
+   }
+  },
+  "3990": {
+   "driver": "Kimi Raikkonen",
+   "team": "Trackhouse Racing",
+   "form_avg_finish": 33.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 33.0
+   }
+  },
+  "4001": {
+   "driver": "Ross Chastain",
+   "team": "Trackhouse Racing",
+   "form_avg_finish": 15.6,
+   "form_top10_rate": 0.3,
+   "by_type": {
+    "superspeedway": 12.125,
+    "intermediate": 23.25,
+    "short_track": 13.625,
+    "one_mile_flat": 19.625,
+    "large_flat": 24.0,
+    "road_course": 18.5
+   }
+  },
+  "4004": {
+   "driver": "Joey Gase",
+   "team": "NY Racing Team",
+   "form_avg_finish": 28.666666666666668,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 27.0,
+    "intermediate": 18.5,
+    "short_track": 37.0,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "4013": {
+   "driver": "Ty Dillon",
+   "team": "Kaulig Racing",
+   "form_avg_finish": 28.5,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 17.625,
+    "intermediate": 25.875,
+    "short_track": 27.75,
+    "one_mile_flat": 29.0,
+    "large_flat": 27.428571428571427,
+    "road_course": 26.0
+   }
+  },
+  "4018": {
+   "driver": "Jeb Burton",
+   "team": "Team AmeriVet",
+   "form_avg_finish": 38.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 38.0,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "4023": {
+   "driver": "Ryan Blaney",
+   "team": "Team Penske",
+   "form_avg_finish": 16.1,
+   "form_top10_rate": 0.6,
+   "by_type": {
+    "superspeedway": 21.25,
+    "intermediate": 5.125,
+    "short_track": 13.125,
+    "one_mile_flat": 6.625,
+    "large_flat": 14.125,
+    "road_course": 12.625
+   }
+  },
+  "4024": {
+   "driver": "Travis Pastrana",
+   "team": "23XI Racing",
+   "form_avg_finish": 11.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 11.0,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "4025": {
+   "driver": "Bubba Wallace",
+   "team": "23XI Racing",
+   "form_avg_finish": 13.5,
+   "form_top10_rate": 0.6,
+   "by_type": {
+    "superspeedway": 20.75,
+    "intermediate": 13.5,
+    "short_track": 14.75,
+    "one_mile_flat": 14.625,
+    "large_flat": 15.0,
+    "road_course": 17.625
+   }
+  },
+  "4030": {
+   "driver": "Kyle Larson",
+   "team": "Hendrick Motorsports",
+   "form_avg_finish": 7.3,
+   "form_top10_rate": 0.8,
+   "by_type": {
+    "superspeedway": 23.25,
+    "intermediate": 10.875,
+    "short_track": 10.25,
+    "one_mile_flat": 8.625,
+    "large_flat": 11.5,
+    "road_course": 15.625
+   }
+  },
+  "4045": {
+   "driver": "Alex Bowman",
+   "team": "Hendrick Motorsports",
+   "form_avg_finish": 18.3,
+   "form_top10_rate": 0.2,
+   "by_type": {
+    "superspeedway": 21.25,
+    "intermediate": 19.0,
+    "short_track": 23.25,
+    "one_mile_flat": 14.0,
+    "large_flat": 16.875,
+    "road_course": 20.25
+   }
+  },
+  "4059": {
+   "driver": "Erik Jones",
+   "team": "Legacy Motor Club",
+   "form_avg_finish": 22.7,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 22.5,
+    "intermediate": 16.0,
+    "short_track": 27.75,
+    "one_mile_flat": 21.625,
+    "large_flat": 17.75,
+    "road_course": 24.0
+   }
+  },
+  "4061": {
+   "driver": "Jonathan Davenport",
+   "team": "Kaulig Racing",
+   "form_avg_finish": 36.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 36.0,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "4062": {
+   "driver": "Chase Elliott",
+   "team": "Hendrick Motorsports",
+   "form_avg_finish": 15.8,
+   "form_top10_rate": 0.4,
+   "by_type": {
+    "superspeedway": 17.625,
+    "intermediate": 14.125,
+    "short_track": 11.0,
+    "one_mile_flat": 13.25,
+    "large_flat": 12.0,
+    "road_course": 14.125
+   }
+  },
+  "4065": {
+   "driver": "Tyler Reddick",
+   "team": "23XI Racing",
+   "form_avg_finish": 12.0,
+   "form_top10_rate": 0.5,
+   "by_type": {
+    "superspeedway": 11.5,
+    "intermediate": 13.0,
+    "short_track": 17.125,
+    "one_mile_flat": 14.625,
+    "large_flat": 10.625,
+    "road_course": 11.875
+   }
+  },
+  "4070": {
+   "driver": "Ryan Preece",
+   "team": "RFK Racing",
+   "form_avg_finish": 16.9,
+   "form_top10_rate": 0.3,
+   "by_type": {
+    "superspeedway": 14.875,
+    "intermediate": 23.0,
+    "short_track": 13.25,
+    "one_mile_flat": 14.0,
+    "large_flat": 19.285714285714285,
+    "road_course": 11.125
+   }
+  },
+  "4092": {
+   "driver": "John H. Nemechek",
+   "team": "Legacy Motor Club",
+   "form_avg_finish": 27.4,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 21.25,
+    "intermediate": 24.0,
+    "short_track": 26.625,
+    "one_mile_flat": 24.5,
+    "large_flat": 18.5,
+    "road_course": 21.125
+   }
+  },
+  "4093": {
+   "driver": "Daniel Hemric",
+   "team": "Kaulig Racing",
+   "form_avg_finish": 23.1,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 20.125,
+    "intermediate": 22.5,
+    "short_track": 25.857142857142858,
+    "one_mile_flat": 21.0,
+    "large_flat": 27.5,
+    "road_course": 26.4
+   }
+  },
+  "4096": {
+   "driver": "Corey LaJoie",
+   "team": "RFK Racing",
+   "form_avg_finish": 28.6,
+   "form_top10_rate": 0.1,
+   "by_type": {
+    "superspeedway": 23.0,
+    "intermediate": 22.0,
+    "short_track": 31.125,
+    "one_mile_flat": 28.25,
+    "large_flat": 19.75,
+    "road_course": 21.625
+   }
+  },
+  "4103": {
+   "driver": "Gray Gaulding",
+   "team": "Garage 66",
+   "form_avg_finish": 22.0,
+   "form_top10_rate": 0.25,
+   "by_type": {
+    "superspeedway": 11.5,
+    "intermediate": 36.0,
+    "short_track": 18.5,
+    "one_mile_flat": 29.0,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "4104": {
+   "driver": "Cole Custer",
+   "team": "Haas Factory Team",
+   "form_avg_finish": 24.9,
+   "form_top10_rate": 0.1,
+   "by_type": {
+    "superspeedway": 15.625,
+    "intermediate": 26.25,
+    "short_track": 27.625,
+    "one_mile_flat": 25.0,
+    "large_flat": 20.166666666666668,
+    "road_course": 25.875
+   }
+  },
+  "4106": {
+   "driver": "Josh Williams",
+   "team": "Kaulig Racing",
+   "form_avg_finish": 29.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 37.0,
+    "intermediate": 18.5,
+    "short_track": 26.0,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 28.0
+   }
+  },
+  "4113": {
+   "driver": "Daniel Su\u00e1rez",
+   "team": "Spire Motorsports",
+   "form_avg_finish": 16.6,
+   "form_top10_rate": 0.2,
+   "by_type": {
+    "superspeedway": 10.625,
+    "intermediate": 13.625,
+    "short_track": 18.0,
+    "one_mile_flat": 24.875,
+    "large_flat": 16.875,
+    "road_course": 17.375
+   }
+  },
+  "4123": {
+   "driver": "Josh Berry",
+   "team": "Wood Brothers Racing",
+   "form_avg_finish": 14.6,
+   "form_top10_rate": 0.4,
+   "by_type": {
+    "superspeedway": 21.0,
+    "intermediate": 20.5,
+    "short_track": 13.75,
+    "one_mile_flat": 18.375,
+    "large_flat": 21.5,
+    "road_course": 26.625
+   }
+  },
+  "4125": {
+   "driver": "Cody Ware",
+   "team": "Rick Ware Racing",
+   "form_avg_finish": 30.7,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 24.875,
+    "intermediate": 30.625,
+    "short_track": 31.75,
+    "one_mile_flat": 29.5,
+    "large_flat": 28.142857142857142,
+    "road_course": 30.625
+   }
+  },
+  "4133": {
+   "driver": "Austin Hill",
+   "team": "Richard Childress Racing",
+   "form_avg_finish": 23.1,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 25.0,
+    "intermediate": 25.875,
+    "short_track": 27.0,
+    "one_mile_flat": 22.5,
+    "large_flat": 25.5,
+    "road_course": 27.4
+   }
+  },
+  "4142": {
+   "driver": "Garrett Smithley",
+   "team": "Rick Ware Racing",
+   "form_avg_finish": 27.666666666666668,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 27.0,
+    "intermediate": 24.666666666666668,
+    "short_track": 18.5,
+    "one_mile_flat": 32.5,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "4144": {
+   "driver": "Brennan Poole",
+   "team": "NY Racing Team",
+   "form_avg_finish": 32.875,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 34.5,
+    "intermediate": 31.75,
+    "short_track": 18.5,
+    "one_mile_flat": 33.0,
+    "large_flat": 34.0,
+    "road_course": 18.5
+   }
+  },
+  "4153": {
+   "driver": "Christopher Bell",
+   "team": "Joe Gibbs Racing",
+   "form_avg_finish": 10.8,
+   "form_top10_rate": 0.7,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 8.875,
+    "short_track": 10.375,
+    "one_mile_flat": 8.875,
+    "large_flat": 9.875,
+    "road_course": 12.75
+   }
+  },
+  "4172": {
+   "driver": "Justin Haley",
+   "team": "Spire Motorsports",
+   "form_avg_finish": 23.7,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 19.0,
+    "intermediate": 25.875,
+    "short_track": 23.0,
+    "one_mile_flat": 24.0,
+    "large_flat": 21.0,
+    "road_course": 23.0
+   }
+  },
+  "4180": {
+   "driver": "Austin Cindric",
+   "team": "Team Penske",
+   "form_avg_finish": 14.6,
+   "form_top10_rate": 0.4,
+   "by_type": {
+    "superspeedway": 23.5,
+    "intermediate": 11.625,
+    "short_track": 16.5,
+    "one_mile_flat": 20.125,
+    "large_flat": 16.5,
+    "road_course": 23.125
+   }
+  },
+  "4184": {
+   "driver": "William Byron",
+   "team": "Hendrick Motorsports",
+   "form_avg_finish": 12.9,
+   "form_top10_rate": 0.7,
+   "by_type": {
+    "superspeedway": 19.875,
+    "intermediate": 18.0,
+    "short_track": 9.5,
+    "one_mile_flat": 17.5,
+    "large_flat": 16.875,
+    "road_course": 19.5
+   }
+  },
+  "4191": {
+   "driver": "Kaz Grala",
+   "team": "Rick Ware Racing",
+   "form_avg_finish": 30.5,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 26.0,
+    "intermediate": 28.75,
+    "short_track": 28.833333333333332,
+    "one_mile_flat": 28.75,
+    "large_flat": 18.5,
+    "road_course": 27.166666666666668
+   }
+  },
+  "4200": {
+   "driver": "Scott Heckert",
+   "team": "Live Fast Motorsports",
+   "form_avg_finish": 33.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 33.0
+   }
+  },
+  "4204": {
+   "driver": "Sheldon Creed",
+   "team": "Live Fast Motorsports",
+   "form_avg_finish": 29.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 29.0,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "4213": {
+   "driver": "Josh Bilicki",
+   "team": "Garage 66",
+   "form_avg_finish": 33.9,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 16.0,
+    "intermediate": 32.125,
+    "short_track": 36.285714285714285,
+    "one_mile_flat": 31.333333333333332,
+    "large_flat": 34.0,
+    "road_course": 29.25
+   }
+  },
+  "4217": {
+   "driver": "Harrison Burton",
+   "team": "23XI Racing",
+   "form_avg_finish": 23.9,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 21.125,
+    "intermediate": 22.375,
+    "short_track": 29.625,
+    "one_mile_flat": 22.875,
+    "large_flat": 24.5,
+    "road_course": 25.25
+   }
+  },
+  "4224": {
+   "driver": "Noah Gragson",
+   "team": "Front Row Motorsports",
+   "form_avg_finish": 23.0,
+   "form_top10_rate": 0.1,
+   "by_type": {
+    "superspeedway": 22.625,
+    "intermediate": 24.0,
+    "short_track": 23.25,
+    "one_mile_flat": 24.625,
+    "large_flat": 25.625,
+    "road_course": 28.375
+   }
+  },
+  "4228": {
+   "driver": "Chase Briscoe",
+   "team": "Joe Gibbs Racing",
+   "form_avg_finish": 16.5,
+   "form_top10_rate": 0.5,
+   "by_type": {
+    "superspeedway": 21.625,
+    "intermediate": 8.125,
+    "short_track": 13.5,
+    "one_mile_flat": 16.875,
+    "large_flat": 14.75,
+    "road_course": 13.0
+   }
+  },
+  "4231": {
+   "driver": "Todd Gilliland",
+   "team": "Front Row Motorsports",
+   "form_avg_finish": 18.7,
+   "form_top10_rate": 0.1,
+   "by_type": {
+    "superspeedway": 16.625,
+    "intermediate": 20.75,
+    "short_track": 16.5,
+    "one_mile_flat": 21.125,
+    "large_flat": 19.625,
+    "road_course": 24.125
+   }
+  },
+  "4232": {
+   "driver": "Chad Finchum",
+   "team": "Garage 66",
+   "form_avg_finish": 33.9,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 30.5,
+    "intermediate": 35.5,
+    "short_track": 35.333333333333336,
+    "one_mile_flat": 36.0,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "4269": {
+   "driver": "Riley Herbst",
+   "team": "23XI Racing",
+   "form_avg_finish": 28.2,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 28.375,
+    "intermediate": 20.5,
+    "short_track": 27.625,
+    "one_mile_flat": 27.25,
+    "large_flat": 28.75,
+    "road_course": 23.75
+   }
+  },
+  "4272": {
+   "driver": "Zane Smith",
+   "team": "Front Row Motorsports",
+   "form_avg_finish": 24.3,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 17.375,
+    "intermediate": 24.5,
+    "short_track": 24.875,
+    "one_mile_flat": 25.25,
+    "large_flat": 25.666666666666668,
+    "road_course": 19.375
+   }
+  },
+  "4284": {
+   "driver": "Katherine Legge",
+   "team": "Live Fast Motorsports",
+   "form_avg_finish": 29.11111111111111,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 31.0,
+    "short_track": 18.5,
+    "one_mile_flat": 30.0,
+    "large_flat": 17.0,
+    "road_course": 30.6
+   }
+  },
+  "4288": {
+   "driver": "Conor Daly",
+   "team": "TMT Racing",
+   "form_avg_finish": 33.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 29.0,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 35.0
+   }
+  },
+  "4297": {
+   "driver": "Derek Kraus",
+   "team": "NY Racing Team",
+   "form_avg_finish": 30.75,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 31.2,
+    "short_track": 18.5,
+    "one_mile_flat": 30.0,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "4301": {
+   "driver": "Anthony Alfredo",
+   "team": "Hendrick Motorsports",
+   "form_avg_finish": 20.7,
+   "form_top10_rate": 0.3,
+   "by_type": {
+    "superspeedway": 15.142857142857142,
+    "intermediate": 18.5,
+    "short_track": 34.0,
+    "one_mile_flat": 33.0,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "4312": {
+   "driver": "Chandler Smith",
+   "team": "Front Row Motorsports",
+   "form_avg_finish": 7.166666666666667,
+   "form_top10_rate": 0.5,
+   "by_type": {
+    "superspeedway": 5.2,
+    "intermediate": 18.5,
+    "short_track": 17.0,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "4326": {
+   "driver": "Carson Hocevar",
+   "team": "Spire Motorsports",
+   "form_avg_finish": 15.8,
+   "form_top10_rate": 0.3,
+   "by_type": {
+    "superspeedway": 13.75,
+    "intermediate": 16.25,
+    "short_track": 20.375,
+    "one_mile_flat": 18.5,
+    "large_flat": 14.333333333333334,
+    "road_course": 25.375
+   }
+  },
+  "4339": {
+   "driver": "Loris Hezemans",
+   "team": "Team Hezeberg",
+   "form_avg_finish": 34.8,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 34.8
+   }
+  },
+  "4368": {
+   "driver": "Ty Gibbs",
+   "team": "Joe Gibbs Racing",
+   "form_avg_finish": 13.4,
+   "form_top10_rate": 0.4,
+   "by_type": {
+    "superspeedway": 20.0,
+    "intermediate": 15.875,
+    "short_track": 5.625,
+    "one_mile_flat": 13.625,
+    "large_flat": 15.875,
+    "road_course": 9.875
+   }
+  },
+  "4387": {
+   "driver": "Corey Heim",
+   "team": "23XI Racing",
+   "form_avg_finish": 14.6,
+   "form_top10_rate": 0.4,
+   "by_type": {
+    "superspeedway": 22.0,
+    "intermediate": 21.125,
+    "short_track": 17.5,
+    "one_mile_flat": 15.0,
+    "large_flat": 1.0,
+    "road_course": 0.5
+   }
+  },
+  "4389": {
+   "driver": "Kyle Tilley",
+   "team": "Live Fast Motorsports",
+   "form_avg_finish": 34.5,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 34.5
+   }
+  },
+  "4413": {
+   "driver": "Joey Hand",
+   "team": "RFK Racing",
+   "form_avg_finish": 25.428571428571427,
+   "form_top10_rate": 0.14285714285714285,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 25.428571428571427
+   }
+  },
+  "4419": {
+   "driver": "Parker Retzlaff",
+   "team": "Beard Motorsports",
+   "form_avg_finish": 21.0,
+   "form_top10_rate": 0.5,
+   "by_type": {
+    "superspeedway": 7.0,
+    "intermediate": 18.5,
+    "short_track": 35.0,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "4447": {
+   "driver": "Daniil Kvyat",
+   "team": "Team Hezeberg",
+   "form_avg_finish": 37.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 37.0
+   }
+  },
+  "4448": {
+   "driver": "Mike Rockenfeller",
+   "team": "Legacy Motor Club",
+   "form_avg_finish": 26.2,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 26.2
+   }
+  },
+  "4451": {
+   "driver": "Daniel Dye",
+   "team": "Live Fast Motorsports",
+   "form_avg_finish": 29.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 26.0,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 33.5,
+    "road_course": 18.5
+   }
+  },
+  "4453": {
+   "driver": "Jenson Button",
+   "team": "Rick Ware Racing",
+   "form_avg_finish": 22.333333333333332,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 22.333333333333332
+   }
+  },
+  "4456": {
+   "driver": "Jordan Taylor",
+   "team": "Hendrick Motorsports",
+   "form_avg_finish": 24.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 24.0
+   }
+  },
+  "4463": {
+   "driver": "Jesse Love",
+   "team": "Richard Childress Racing",
+   "form_avg_finish": 28.857142857142858,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 27.0,
+    "intermediate": 30.0,
+    "short_track": 32.0,
+    "one_mile_flat": 18.5,
+    "large_flat": 24.0,
+    "road_course": 27.0
+   }
+  },
+  "4469": {
+   "driver": "Shane Van Gisbergen",
+   "team": "Trackhouse Racing",
+   "form_avg_finish": 20.4,
+   "form_top10_rate": 0.3,
+   "by_type": {
+    "superspeedway": 18.375,
+    "intermediate": 20.0,
+    "short_track": 16.625,
+    "one_mile_flat": 23.875,
+    "large_flat": 24.25,
+    "road_course": 5.75
+   }
+  },
+  "4473": {
+   "driver": "Kamui Kobayashi",
+   "team": "23XI Racing",
+   "form_avg_finish": 31.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 31.0
+   }
+  },
+  "4474": {
+   "driver": "Brodie Kostecki",
+   "team": "Richard Childress Racing",
+   "form_avg_finish": 22.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 22.0
+   }
+  },
+  "4481": {
+   "driver": "Connor Zilisch",
+   "team": "Trackhouse Racing",
+   "form_avg_finish": 23.5,
+   "form_top10_rate": 0.1,
+   "by_type": {
+    "superspeedway": 26.0,
+    "intermediate": 31.375,
+    "short_track": 24.0,
+    "one_mile_flat": 22.75,
+    "large_flat": 28.5,
+    "road_course": 19.166666666666668
+   }
+  },
+  "4485": {
+   "driver": "Cam Waters",
+   "team": "RFK Racing",
+   "form_avg_finish": 35.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 35.0
+   }
+  },
+  "4492": {
+   "driver": "Will Brown",
+   "team": "Kaulig Racing",
+   "form_avg_finish": 35.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 35.0
+   }
+  },
+  "4505": {
+   "driver": "Helio Castroneves",
+   "team": "Trackhouse Racing",
+   "form_avg_finish": 39.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 39.0,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 18.5
+   }
+  },
+  "4541": {
+   "driver": "Kevin Magnussen",
+   "team": "Trackhouse Racing",
+   "form_avg_finish": 27.0,
+   "form_top10_rate": 0.0,
+   "by_type": {
+    "superspeedway": 18.5,
+    "intermediate": 18.5,
+    "short_track": 18.5,
+    "one_mile_flat": 18.5,
+    "large_flat": 18.5,
+    "road_course": 27.0
+   }
+  }
+ },
+ "team_avg_finish": {
+  "23XI Racing": 18.4,
+  "Beard Motorsports": 21.884615384615383,
+  "Front Row Motorsports": 22.0,
+  "Garage 66": 31.733333333333334,
+  "HYAK Motorsports": 23.2,
+  "Haas Factory Team": 24.1,
+  "Hendrick Motorsports": 12.633333333333333,
+  "JR Motorsports": 23.5,
+  "JTG Daugherty Racing": 21.933333333333334,
+  "Joe Gibbs Racing": 12.6,
+  "Kaulig Racing": 25.5,
+  "Legacy Motor Club": 26.033333333333335,
+  "Live Fast Motorsports": 26.9,
+  "Motorsports Business Management": 12.75,
+  "NY Racing Team": 29.9,
+  "Petty GMS": 18.821428571428573,
+  "Petty GMS Motorsports": 19.766666666666666,
+  "Power Source": 32.714285714285715,
+  "RFK Racing": 19.566666666666666,
+  "Richard Childress Racing": 22.0,
+  "Rick Ware Racing": 30.2,
+  "Roush Fenway Keselowski Racing": 19.633333333333333,
+  "Spire Motorsports": 16.8,
+  "Stewart-Haas Racing": 21.866666666666667,
+  "TMT Racing": 28.833333333333332,
+  "TRICON Garage": 38.0,
+  "Team AmeriVet": 36.666666666666664,
+  "Team Hezeberg": 34.111111111111114,
+  "Team Penske": 14.466666666666667,
+  "TrackHouse Racing": 16.566666666666666,
+  "Trackhouse Racing": 19.833333333333332,
+  "Wood Brothers Racing": 19.966666666666665
+ }
+}
